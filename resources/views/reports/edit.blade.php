@@ -95,11 +95,11 @@
    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
    <script>
       $('#expire_date').datepicker({
-         uiLibrary: 'bootstrap4'
+         uiLibrary: 'bootstrap'
       });
 
       $('#announce_date').datepicker({
-         uiLibrary: 'bootstrap4'
+         uiLibrary: 'bootstrap'
       });
    </script>
 @endpush
