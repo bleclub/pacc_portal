@@ -73,7 +73,7 @@
                                 <input type="text" name="announce_date" id="announce_date" class="form-control" placeholder="ประกาศสืบจับ" required>
                              </div>
                              <div class="form-group">
-                                 <button class="btn btn-primary" type="submit">บันทึก</button>
+                                 <button class="btn btn-primary" type="submit">บันทึกแล้วนะ</button>
                              </div>
                         </form>
                       </div>
