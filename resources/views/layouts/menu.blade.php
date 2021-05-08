@@ -42,13 +42,13 @@
                 <li class="nav-item">
                     <a href="{{ route('report.index') }}" class="nav-link active">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>รายงานเรื่องที่ 1</p>
+                    <p>รายงาน</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link active">
+                    <a href="{{ route('department.index') }}" class="nav-link active">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>รายงานเรื่องที่ 2</p>
+                    <p>จัดการหน่วยงาน</p>
                     </a>
                 </li>
                 <li class="nav-item">
