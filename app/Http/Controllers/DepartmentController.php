@@ -69,7 +69,7 @@ class DepartmentController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Responseก
      */
     public function edit($id)
     {
@@ -117,4 +117,5 @@ class DepartmentController extends Controller
         return redirect()->route('department.index')->with('delete', 'ลบข้อมูลเรียบร้อย');
 
     }
+    
 }
