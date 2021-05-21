@@ -7,6 +7,12 @@ use App\Models\Report;
 
 class ReportController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -41,8 +47,6 @@ class ReportController extends Controller
     public function store(Request $request)
     {
         //
-        
-
         $reports = new Report([
             'case_id' => $request->get('case_id'),
             'department' => $request->get('department'),

@@ -31,3 +31,8 @@ Route::resource('report', ReportController::class);
 Route::get('/report/edit/{id}/{case_id}', [ReportController::class, 'edit'])->name('report.edit');
 
 Route::resource('department', DepartmentController::class);
+
+
+Auth::routes(['register' => false]);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

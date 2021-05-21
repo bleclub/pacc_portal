@@ -15,7 +15,7 @@
           <img src="{{ asset('assets') }}/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">{{ auth()->user()->name }}</a>
         </div>
       </div>
 
@@ -52,10 +52,16 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link active">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>รายงานเรื่องที่ 3</p>
+                    {{-- <a href="{{ route('logout') }}" class="nav-link active">ออกจากระบบ</a> --}}
+
+                    <a class="nav-link active" href="{{ route('logout') }}"
+                      onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                      <i class="far fa-circle nav-icon"></i>ออกจากระบบ
                     </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+
                 </li>
             </ul>
           </li>
