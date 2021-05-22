@@ -26,7 +26,18 @@
       {{-- Start Content Body --}}
       <section class="content">
         <div class="container-fluid">
-            
+          <div class="row">
+            <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">เพิ่มผู้ใช้งานระบบ</h3>
+                  </div>
+                  <div class="card-body">
+                            
+                  </div>
+                </div>
+            </div>
+        </div>
         </div>
       </section>
       {{-- End Content Body --}}

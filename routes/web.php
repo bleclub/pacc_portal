@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,7 @@ Route::get('/report/edit/{id}/{case_id}', [ReportController::class, 'edit'])->na
 
 Route::resource('department', DepartmentController::class);
 
+Route::resource('user', UserController::class);
 
 Auth::routes(['register' => false]);
 

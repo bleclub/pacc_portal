@@ -52,6 +52,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('user.index') }}" class="nav-link active">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>ผู้ใช้งานระบบ</p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     {{-- <a href="{{ route('logout') }}" class="nav-link active">ออกจากระบบ</a> --}}
 
                     <a class="nav-link active" href="{{ route('logout') }}"
