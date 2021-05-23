@@ -21,7 +21,8 @@ class User extends Authenticatable
         'email',
         'password',
         'user_type',
-        'depm_id'
+        'depm_id',
+        'profile'
     ];
 
     /**
@@ -42,4 +43,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function department(){
+        return $this->hasOne(Department::class, 'depm_id', 'depm_id');
+    }
 }

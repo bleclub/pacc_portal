@@ -4,6 +4,24 @@
 
 
 @section('content')
+
+@if (Session::has('success'))
+    <div class="row">
+      <div class="col-12">
+          <div class="alert alert-success">
+              {{ Session::get('success') }}
+          </div>
+      </div>
+    </div>
+@elseif(Session::has('delete'))
+    <div class="row">
+      <div class="col-12">
+          <div class="alert alert-danger">
+              {{ Session::get('delete') }}
+          </div>
+      </div>
+    </div>
+ @endif
    
      <!-- Content Header (Page header) -->
      <div class="content-header">
@@ -39,32 +57,32 @@
                             <table class="table table-hover text-nowrap">
                             <thead>
                                 <tr>
-                                <th>ชื่อผู้ใช้งาน</th>
-                                <th>อีเมล์ผู้ใช้งาน</th>
-                                <th>แผนก</th>
-                                <th>ประเภทผู้ใช้งาน</th>
-                                <th>การจัดการ</th>
+                                    <th>ชื่อผู้ใช้งาน</th>
+                                    <th>อีเมล์ผู้ใช้งาน</th>
+                                    <th>แผนก</th>
+                                    <th>ประเภทผู้ใช้งาน</th>
+                                    <th>การจัดการ</th>
                                 </tr>
                             </thead>
                             <tbody>
 
-                                {{-- @foreach ($reports as $report) --}}
+                                @foreach ($users as $user)
                                     
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td>{{ $user->department->depm_name }}</td>
+                                    <td>{{ $user->user_type }}</td>
                                     <td>
-                                        <a href="#" class="btn btn-warning">แก้ไขข้อมูล</a>
+                                        <a href="{{ route('user.edit', $user->id) }}" class="btn btn-warning">แก้ไขข้อมูล</a>
 
-                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal_">ลบข้อมูล</button>
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal_{{ $user->id }}">ลบข้อมูล</button>
                                         <!-- Modal -->
-                                        <div class="modal fade" id="deleteModal_" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="deleteModal_{{ $user->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">ลบข้อมูลหมายเลขคดี</h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel">ลบข้อมูลผู้ใช้</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                     </button>
@@ -75,7 +93,7 @@
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
                                                     
-                                                    <form action="#" method="post">
+                                                    <form action="{{ route('user.destroy', $user->id) }}" method="post">
                                                     @csrf
                                                     <input type="hidden" name="_method" value="DELETE">
                                                     <button type="submit" class="btn btn-danger">ลบข้อมูล</button>
@@ -88,7 +106,7 @@
                                     </td>
                                 </tr>
 
-                                {{-- @endforeach --}}
+                                @endforeach
                                 
                             </tbody>
                             </table>

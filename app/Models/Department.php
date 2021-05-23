@@ -16,4 +16,9 @@ class Department extends Model
         'depm_shortname',
   
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
 }
